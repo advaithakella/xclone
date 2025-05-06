@@ -1,50 +1,111 @@
-# Welcome to your Expo app 👋
+# Supa - Social Media App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Supa is a modern social media application built with React Native, Expo, and Supabase. It features a sleek mint green and black theme, real-time updates, and a full suite of social media features.
 
-## Get started
+## Features
 
-1. Install dependencies
+- User authentication (sign up, sign in, sign out)
+- User profiles with customizable avatars and bios
+- Create, view, and interact with posts
+- Like and comment on posts
+- Follow/unfollow other users
+- Search for users
+- Settings management
+- Dark mode support
 
-   ```bash
-   npm install
-   ```
+## Tech Stack
 
-2. Start the app
+- React Native
+- Expo
+- Supabase (Authentication, Database, Storage)
+- TypeScript
+- Tailwind CSS
 
-   ```bash
-    npx expo start
-   ```
+## Prerequisites
 
-In the output, you'll find options to open the app in a
+- Node.js (v14 or later)
+- npm or yarn
+- Expo CLI
+- Supabase account
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Getting Started
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### 1. Clone the repository
 
 ```bash
-npm run reset-project
+git clone https://github.com/yourusername/supa.git
+cd supa
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Install dependencies
 
-## Learn more
+```bash
+npm install
+# or
+yarn install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### 3. Set up Supabase
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+1. Create a new Supabase project at [https://supabase.com](https://supabase.com)
+2. Run the SQL migration in `supabase/migrations/20230101000000_initial_schema.sql` to set up the database schema
+3. Create a `.env` file in the root directory with your Supabase credentials:
 
-## Join the community
+```
+EXPO_PUBLIC_SUPABASE_URL=your-supabase-url
+EXPO_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+```
 
-Join our community of developers creating universal apps.
+### 4. Start the development server
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+npx expo start
+```
+
+### 5. Run on a device or emulator
+
+- Press `i` to open in iOS simulator
+- Press `a` to open in Android emulator
+- Scan the QR code with the Expo Go app on your physical device
+
+## Project Structure
+
+```
+supa/
+├── app/                  # Expo Router app directory
+│   ├── (tabs)/           # Tab navigation screens
+│   ├── auth/             # Authentication screens
+│   ├── profile/          # Profile screens
+│   └── _layout.tsx       # Root layout
+├── components/           # Reusable components
+├── lib/                  # Utility functions and API clients
+├── supabase/            # Supabase configuration and migrations
+└── assets/              # Static assets
+```
+
+## Database Schema
+
+- `profiles`: User profiles
+- `posts`: User posts
+- `likes`: Post likes
+- `comments`: Post comments
+- `follows`: User follow relationships
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- [Expo](https://expo.dev/)
+- [Supabase](https://supabase.com/)
+- [React Native](https://reactnative.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
